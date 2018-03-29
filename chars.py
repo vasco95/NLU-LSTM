@@ -19,7 +19,7 @@ EOS0 = '<eos>'
 unknown = '<unk>'
 freq_threshold = 1
 
-data_path = './char_level/'
+data_path = '/home1/e1-246-54/lstm/NLU-LSTM/char_level/'
 
 def get_vocab(fname = 'gutenberg.train', perc = 1.0):
     # corpus_file = fname
@@ -358,10 +358,10 @@ hidden_size = 700
 train_mode = False
 model_save_name = 'low_data'
 
-word_map, word_unmap = get_vocab('gutenberg.train')
+word_map, word_unmap = get_vocab('/home1/e1-246-54/lstm/NLU-LSTM/gutenberg.train')
 vocabulary = len(word_map)
-train_data = encode_data('gutenberg.train', word_map)
-test_data = encode_data('gutenberg.test', word_map)
+train_data = encode_data('/home1/e1-246-54/lstm/NLU-LSTM/gutenberg.train', word_map)
+test_data = encode_data('/home1/e1-246-54/lstm/NLU-LSTM/gutenberg.test', word_map)
 
 if train_mode == True:
     print 'Training Model'

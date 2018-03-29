@@ -19,7 +19,7 @@ EOS0 = '<eos>'
 unknown = '<unk>'
 freq_threshold = 2
 
-data_path = './word_level3/'
+data_path = '/home1/e1-246-54/lstm/NLU-LSTM/word_level3/'
 
 def get_vocab(fname = 'gutenberg.train', perc = 1.0):
     corpus_file = fname
@@ -301,7 +301,7 @@ def test(test_data, vocabulary, batch_size, model_path,\
 def generate_text(word_map, word_unmap, vocabulary, batch_size, model_path,\
             step_len = 32, hidden_size = 512, num_layers = 1):
 
-    seed = encode_data('seed_file', word_map)
+    seed = encode_data('/home1/e1-246-54/lstm/NLU-LSTM/seed_file', word_map)
 #    seed = np.array(word_map['the']).reshape((1, 1))
     seed = seed.reshape((1, len(seed)))
     tmp = seed.shape[1]
@@ -356,10 +356,10 @@ hidden_size = 700
 train_mode = False
 model_save_name = 'low_data'
 
-word_map, word_unmap = get_vocab('gutenberg.train')
+word_map, word_unmap = get_vocab('/home1/e1-246-54/lstm/NLU-LSTM/gutenberg.train')
 vocabulary = len(word_map)
-train_data = encode_data('gutenberg.train', word_map)
-test_data = encode_data('gutenberg.test', word_map)
+train_data = encode_data('/home1/e1-246-54/lstm/NLU-LSTM/gutenberg.train', word_map)
+test_data = encode_data('/home1/e1-246-54/lstm/NLU-LSTM/gutenberg.test', word_map)
 
 if train_mode == True:
     print 'Training Model'
